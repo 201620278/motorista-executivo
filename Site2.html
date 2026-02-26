@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Motorista Executivo SP | Luxo e Segurança</title>
+    <!-- Meta tags SEO -->
+    <meta name="description" content="Mais de 10.000 corridas realizadas. Transporte executivo com pontualidade, conforto e discrição em São Paulo. Solicite uma viagem.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.seumotorista.com">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Motorista Executivo - Luxo, Conforto e Segurança">
+    <meta property="og:description" content="Experiência comprovada com +10.000 corridas e avaliação 5 estrelas. Atendimento personalizado.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.seumotorista.com">
+    <meta property="og:image" content="https://www.seumotorista.com/assets/og-image.jpg"> <!-- substituir por URL real -->
+    <!-- Favicon (placeholder) -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚗</text></svg>">
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Motorista Executivo",
+        "image": "https://www.seumotorista.com/assets/logo.png",
+        "telephone": "+5588996255866",
+        "email": "cicerodiego888@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Juazeiro do Norte",
+            "addressRegion": "CE",
+            "addressCountry": "BR"
+        },
+        "priceRange": "R$",
+        "description": "Serviço de motorista executivo com mais de 10.000 corridas realizadas, histórico sem incidentes e avaliação média 5 estrelas.",
+        "areaServed": "São Paulo",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Serviços",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Traslados para Aeroportos"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Viagens Executivas"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "City Tour"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Motorista Particular"}}
+            ]
+        }
+    }
+    </script>
+    <!-- Google Analytics 4 (placeholder) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- Meta Pixel (placeholder) -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'SEU_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* RESET E VARIÁVEIS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #c9a050;
+            --light: #f9f9f9;
+            --gray: #e5e5e5;
+            --text: #333;
+            --text-light: #666;
+            --white: #fff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER FIXO */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        .logo span {
+            color: var(--secondary);
+            font-weight: 300;
+        }
+        .logo img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        /* Navegação desktop */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Menu hamburger (mobile) */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        .menu-toggle i {
+            pointer-events: none;
+        }
+
+        /* MAIN content offset para header fixo */
+        main {
+            margin-top: 70px;
+        }
+
+        /* SEÇÕES */
+        section {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('fiat-argo-2018-2.webp');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        .hero h1 strong {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 5px 15px rgba(201,160,80,0.3);
+        }
+        .btn:hover {
+            background: transparent;
+            border-color: var(--secondary);
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        /* Seção Autoridade */
+        .authority {
+            background: var(--white);
+            text-align: center;
+        }
+        .stats-big {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+        .stats-big i {
+            color: var(--secondary);
+            font-size: 2rem;
+            margin-left: 0.5rem;
+        }
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0 1rem;
+        }
+        .stat-item {
+            flex: 1 1 200px;
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        .stat-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+        .stat-item p {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Mini depoimentos */
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: var(--shadow);
+            flex: 1 1 250px;
+            border: 1px solid var(--gray);
+            transition: var(--transition);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+        .testimonial-card i {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .testimonial-card p {
+            font-style: italic;
+            margin: 0.5rem 0;
+        }
+        .stars {
+            color: var(--secondary);
+            letter-spacing: 3px;
+        }
+
+        /* Cards de serviços */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            color: var(--primary);
+        }
+        .section-title span {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--gray);
+        }
+        .service-card:hover {
+            transform: scale(1.03);
+            border-color: var(--secondary);
+        }
+        .service-card i {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .service-card p {
+            color: var(--text-light);
+        }
+       /* Contato */
+        .contact {
+            background: var(--light);
+            border-radius: 30px 30px 0 0;
+            text-align: center;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+            font-size: 1.3rem;
+            margin: 2rem 0;
+        }
+        .contact-info a {
+            text-decoration: none;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        .contact-info a:hover {
+            color: var(--secondary);
+        }
+
+        /* Rodapé */
+        footer {
+            background: var(--primary);
+            color: #aaa;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        .legal {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* Botão WhatsApp flutuante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(37,211,102,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            z-index: 99;
+            border: none;
+            cursor: pointer;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #20b859;
+        }
+
+        /* Modal de formulário */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 30px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        .modal-content h2 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .modal-content .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--gray);
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .btn-whatsapp:hover {
+            background: #20b859;
+        }
+
+        /* Animações fade-in */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 3rem 0;
+                transition: left 0.3s ease;
+                box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            .nav-links.active {
+                left: 0;
+            }
+            .hero {
+                min-height: 60vh;
+            }
+            .btn {
+                padding: 0.8rem 2rem;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        /* Ajuste para telas muito pequenas */
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Cícero Diego - Seu Motorista Executivo">
+            SERVIÇO DE <span>MOTORISTA EXECUTIVO</span>
+        </div>
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#autoridade">Autoridade</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" id="menuToggle" aria-label="Abrir menu" role="button" tabindex="0">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO com CTA -->
+        <section class="hero" id="hero">
+            <div class="hero-content fade-in">
+                <h1>Luxo, <strong>Conforto</strong> e <strong>Segurança</strong> para Sua Viagem</h1>
+                <a href="#" class="btn" id="solicitarViagemBtn">Solicite uma Viagem</a>
+            </div>
+        </section>
+
+        <!-- SEÇÃO AUTORIDADE / PROVA SOCIAL -->
+        <section class="authority" id="autoridade">
+            <div class="stats-big fade-in">
+                +10.000 corridas realizadas <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="stats-grid fade-in">
+                <div class="stat-item">
+                    <i class="fas fa-shield-alt fa-2x" style="color: var(--secondary);"></i>
+                    <h3>Histórico sem incidentes</h3>
+                    <p>Avaliação média</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-user-tie fa-2x" style="color: var(--secondary);"></i>
+                    <h3>Atendimento profissional e personalizado</h3>
+                    <p>5 estrelas</p>
+                </div>
+            </div>
+            <p style="max-width: 700px; margin: 1rem auto; color: var(--text-light);">Ao longo de mais de 10 mil corridas realizadas em plataformas de transporte, construí uma reputação baseada em pontualidade, segurança e excelência no atendimento. Agora, ofereço um serviço executivo exclusivo, com ainda mais conforto, discrição e personalização para cada cliente.</p>
+
+            <!-- Mini depoimentos -->
+            <div class="testimonials">
+                <div class="testimonial-card fade-in">
+                    <i class="fas fa-quote-left"></i>
+                    <p>“Motorista extremamente educado e pontual.”</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <i class="fas fa-quote-left"></i>
+                    <p>“Carro sempre limpo e confortável.”</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <i class="fas fa-quote-left"></i>
+                    <p>“Viagem tranquila e segura.”</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVIÇOS -->
+        <section id="servicos">
+            <h2 class="section-title">POR QUE ESCOLHER <span>NOSSOS SERVIÇOS?</span></h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <i class="fas fa-plane-departure"></i>
+                    <h3>Traslados para Aeroportos</h3>
+                    <p>Transfers para aeroportos com total comodidade.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Viagens Executivas</h3>
+                    <p>Transporte para reuniões e eventos corporativos.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-city"></i>
+                    <h3>City Tour</h3>
+                    <p>Passeios pela cidade com todo o conforto.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-user-check"></i>
+                    <h3>Motorista Particular</h3>
+                    <p>Serviço de transporte personalizado.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section class="contact" id="contato">
+            <h2 class="section-title">Fale <span>Conosco</span></h2>
+            <div class="contact-info">
+                <a href="https://wa.me/5588996255866?text=Olá,%20gostaria%20de%20informações%20sobre%20o%20serviço%20executivo" target="_blank"><i class="fab fa-whatsapp"></i> (88)99625-5866 </a>
+                <a href="mailto:contato@seumotorista.com"><i class="far fa-envelope"></i> cicerodiego888@gmail.com</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Cicero Diego. Todos os direitos reservados.</p>
+        
+        <div class="legal">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+        </div>
+    </footer>
+
+    <!-- Botão WhatsApp flutuante -->
+    <a href="https://wa.me/5588996255866?text=Olá,%20gostaria%20de%20agendar%20uma%20viagem" class="whatsapp-float" target="_blank" aria-label="Contato WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- MODAL DE FORMULÁRIO (agendamento inteligente) -->
+    <div class="modal" id="modalForm">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Agendar Viagem</h2>
+            <form id="whatsappForm">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="data">Data</label>
+                    <input type="date" id="data" required>
+                </div>
+                <div class="form-group">
+                    <label for="hora">Horário</label>
+                    <input type="time" id="hora" required>
+                </div>
+                <div class="form-group">
+                    <label for="origem">Origem</label>
+                    <input type="text" id="origem" required placeholder="Endereço de partida">
+                </div>
+                <div class="form-group">
+                    <label for="destino">Destino</label>
+                    <input type="text" id="destino" required placeholder="Endereço de chegada">
+                </div>
+                <button type="submit" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Enviar pedido via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        (function() {
+            // Menu mobile toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('active');
+                });
+
+                // Fechar menu ao clicar em um link
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                    });
+                });
+
+                // Fechar ao clicar fora (em telas grandes)
+                document.addEventListener('click', (event) => {
+                    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            }
+       // Scroll suave para links do menu
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === "#" || href === "") return;
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Modal de agendamento
+            const modal = document.getElementById('modalForm');
+            const btnSolicitar = document.getElementById('solicitarViagemBtn');
+            const closeModal = document.getElementById('closeModal');
+            const whatsappForm = document.getElementById('whatsappForm');
+
+            function openModal() {
+                modal.classList.add('active');
+            }
+            function closeModalFunc() {
+                modal.classList.remove('active');
+            }
+
+            if (btnSolicitar) {
+                btnSolicitar.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal();
+                });
+            }
+            if (closeModal) {
+                closeModal.addEventListener('click', closeModalFunc);
+            }
+            // Fechar clicando fora do conteúdo
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModalFunc();
+            });
+
+            // Submissão do formulário: gera link do WhatsApp
+            if (whatsappForm) {
+                whatsappForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const nome = document.getElementById('nome').value.trim();
+                    const data = document.getElementById('data').value;
+                    const hora = document.getElementById('hora').value;
+                    const origem = document.getElementById('origem').value.trim();
+                    const destino = document.getElementById('destino').value.trim();
+
+                    if (!nome || !data || !hora || !origem || !destino) {
+                        alert('Preencha todos os campos');
+                        return;
+                    }
+
+                    // Formatar data (YYYY-MM-DD para DD/MM/YYYY)
+                    const dataObj = new Date(data + 'T00:00:00');
+                    const dataFormatada = dataObj.toLocaleDateString('pt-BR');
+                    
+                    const mensagem = `Olá, gostaria de agendar uma viagem:%0A%0A*Nome:* ${nome}%0A*Data:* ${dataFormatada}%0A*Horário:* ${hora}%0A*Origem:* ${origem}%0A*Destino:* ${destino}`;
+                    
+                    const numeroWhatsApp = '5588996255866'; // Substitua pelo número real
+                    const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+                    
+                    window.open(url, '_blank');
+                    closeModalFunc();
+                    whatsappForm.reset();
+                });
+            }
+
+            // Intersection Observer para fade-in
+            const faders = document.querySelectorAll('.fade-in');
+            const appearOptions = { threshold: 0.2, rootMargin: '0px 0px -50px 0px' };
+            const appearOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => appearOnScroll.observe(fader));
+
+            // Aplicar visible imediatamente a elementos já visíveis (caso estejam na tela inicial)
+            window.addEventListener('load', () => {
+                faders.forEach(fader => {
+                    const rect = fader.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        fader.classList.add('visible');
+                        appearOnScroll.unobserve(fader);
+                    }
+                });
+            });
+        })();
+    </script>
+    <!-- Inserir máscara simples para data e hora? Os inputs nativos já resolvem -->
+</body>
+</html>
