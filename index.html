@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Motorista Particular SP | Luxo e Segurança</title>
+    <title>Motorista Particular CE | Luxo e Segurança</title>
     <!-- Meta tags SEO -->
     <meta name="description" content="Mais de 10.000 corridas realizadas. Transporte particular com pontualidade, conforto e discrição em São Paulo. Solicite uma viagem.">
     <meta name="robots" content="index, follow">
@@ -317,6 +317,47 @@
             letter-spacing: 3px;
         }
 
+        /* CTA Avaliação Google */
+        .google-review-cta {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 20px;
+            border: 1px solid var(--gray);
+        }
+        .google-review-cta p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        .google-review-cta strong {
+            color: var(--text);
+        }
+        .btn-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--white);
+            color: #5f6368;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid var(--gray);
+            transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .btn-google:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        .btn-google i {
+            font-size: 1.2rem;
+        }
+
         /* Cards de serviços */
         .section-title {
             text-align: center;
@@ -620,6 +661,12 @@
                     <p>“Viagem tranquila e segura.”</p>
                     <div class="stars">★★★★★</div>
                 </div>
+            </div>
+            <div class="google-review-cta fade-in">
+                <p>Gostou do atendimento? <strong>Deixe sua avaliação no Google</strong> e ajude outros clientes.</p>
+                <a href="https://g.page/r/CfsN7eM1zkAAEAI/review" target="_blank" rel="noopener noreferrer" class="btn-google" aria-label="Avaliar no Google">
+                    <i class="fab fa-google"></i> Avalie no Google
+                </a>
             </div>
         </section>
 
